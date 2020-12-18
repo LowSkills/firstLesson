@@ -32,12 +32,11 @@ let mainList = {
     open: true
 };
 
-
 for (let i = 0; i < 3; i++) {
     mainList.shopGoods[i] = prompt("Какой тип товаров будем продавать?", '');
     console.log(mainList.shopGoods[i]);
 };
 
 let BudgetDay = mainList.Budget/30;
-console.log(BudgetDay)
+console.log(BudgetDay);
 
