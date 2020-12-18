@@ -21,9 +21,23 @@
 
 // console.log( typeof(anser));
 
-var first = prompt("Ваш бюджет?");
-var second = prompt("Название вашего магазина?");
+let money = prompt("Ваш бюджет на месяц?", '');
+let names = prompt("Название магазина?", '');
 
-obj mainList = {
-    
-} 
+let mainList = {
+    Budget: money,
+    MaGname: names,
+    shopGoods: [],
+    employers: {},
+    open: true
+};
+
+
+for (let i = 0; i < 3; i++) {
+    mainList.shopGoods[i] = prompt("Какой тип товаров будем продавать?", '');
+    console.log(mainList.shopGoods[i]);
+};
+
+let BudgetDay = mainList.Budget/30;
+console.log(BudgetDay)
+
