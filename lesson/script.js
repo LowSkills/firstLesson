@@ -21,8 +21,9 @@
 
 // console.log( typeof(anser));
 
-let money = prompt("Ваш бюджет на месяц?", '');
-let names = prompt("Название магазина?", '');
+let money = prompt("Ваш бюджет на месяц?");
+let names = prompt("Название магазина?");
+let time  = 19;
 
 let mainList = {
     Budget: money,
@@ -33,10 +34,26 @@ let mainList = {
 };
 
 for (let i = 0; i < 3; i++) {
-    mainList.shopGoods[i] = prompt("Какой тип товаров будем продавать?", '');
-    console.log(mainList.shopGoods[i]);
+    let a = prompt("Какой тип товаров будем продавать?");    
+    
+    if ((typeof(a)) === 'string' && (typeof(a)) === null && a != '' && a.length < 50){
+        console.log('Всё верно!');
+        mainList.shopGoods[i] = a;
+    } else {
+
+    }
 };
 
-let BudgetDay = mainList.Budget/30;
-console.log(BudgetDay);
+if (time < 0) {
+    console.log('Такого времени не может быть');
+} else if (time > 8 && time < 20) {
+    console.log('Время работать!');
+    } else if (time < 24) {
+        console.log('Уже слишком поздно');
+        } else {
+            console.log('В сутках только 24 часа!');
+            };
+
+console.log(mainList.Budget/30);
+console.log(mainList);
 

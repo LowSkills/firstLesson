@@ -7,7 +7,7 @@ for (let i = 0; i < num.length ; i++ )
         end = num[0];        
     } else {
         end *= num[i];
-    }
+        }
     console.log(end);
 
 }
