@@ -1,0 +1,23 @@
+* {
+  margin: 10px;
+}
+
+div {
+  background-color: pink;
+  display: table;
+}
+
+button {
+  background: green;
+  width: 150px;
+  height: 40px;
+
+  color: white;
+  display: inline-block;
+  border: none;
+  border-radius: 15%;
+}
+
+a {
+  display: block;
+}
