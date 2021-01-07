@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let target = event.target;
         if (target.className == 'info-header-tab') {
             for ( let i = 0; i < tab.length; i++) {
-                if (targer == tab[i]) {
+                if (target == tab[i]) {
                     showTabContent(i);
                     break;
                 }
@@ -34,3 +34,41 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 });
+
+// window.addEventListener('DOMContentLoaded', function() {
+//     let tab = document.getElementsByClassName('info-header-tab'),
+//         tabContent = document.getElementsByClassName('info-tabcontent'),
+//         info = document.getElementsByClassName('info-header')[0];
+
+//     function hideTabsContent(a) {
+//         for (var i=a; i<tabContent.length; i++) {
+//             tabContent[i].classList.remove('show');
+//             tabContent[i].classList.add("hide");
+//             tab[i].classList.remove('whiteborder');
+//         }
+//     }
+
+//     hideTabsContent(1);
+
+//     function showTabContent(b) {
+//         if (tabContent[b].classList.contains('hide')){
+//             hideTabsContent(0);
+//             tabContent[b].classList.remove('hide');
+//             tabContent[b].classList.add('show');
+//         }
+//     }
+
+//     info.addEventListener('click', function(event) {
+//         let target = event.target;
+//         if (target.className == 'info-header-tab') {
+//             for ( let i = 0; i < tab.length; i++) {
+//                 if (target == tab[i]) {
+//                     hideTabsContent(i);
+//                     break;
+//                 }
+//             }
+//         };
+//     });
+
+
+// });
