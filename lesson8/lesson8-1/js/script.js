@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     //timer
 
-    let deadline = '2021-01-08';
+    let deadline = '2021-01-07 22:40:00 GMT+0300';// дата окончания + таймзона
     // Время сейчас от винды
     // var time = setInterval(function() {
     //     var date = new Date();
@@ -67,9 +67,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
             function updateClock() {
                 let t = getTimeRemaining(endtime);
-                hours.innerHTML = t.hours;
-                minutes.innerHTML = t.minutes;
-                seconds.innerHTML = t.seconds;
+                hours.innerHTML = t.hours + "ч";
+                minutes.innerHTML = t.minutes + "м";
+                seconds.innerHTML = t.seconds+ "с";
                 
                 if (t.total <= 0){
                     clearInterval = setInterval(updateClock, 1000);
