@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-
+    // табы 
     let tab = document.getElementsByClassName('info-header-tab'),
     tabContent = document.getElementsByClassName('info-tabcontent'),
     info = document.getElementsByClassName('info-header')[0];
