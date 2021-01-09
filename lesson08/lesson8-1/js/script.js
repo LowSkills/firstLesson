@@ -102,44 +102,49 @@ window.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = ''; //включение скролла после закрытия модального окна
     });
 
+    // Form 
+    let message = new Object();
+    message.loading = "Загрузка...";
+    message.success = "Спасибо! Скоро мы с вами свяжемся";
+    message.failure = "Что-то пошло не так...";
 
+    let form = document.getElementsByClassName('main-form')[0],
+        input = form.getElementsByTagName('input'),
+        statusMassage = document.createElement('div');
+
+    statusMassage.classList.add('status');
+
+    form.addEventListener('submit', function(event){
+        event.preventDefault();
+        form.appendChild(statusMassage);
+
+        //Ajax
+
+        let request = new XMLHttpRequest();
+        request.open("POST", 'server.php');
+        
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        let formData = new FormData(form);
+        
+        request.send(formData);
+
+        request.onreadystatechange = function() {
+            if (request.readyState < 4){
+                statusMassage.innerHTML = message.loading;
+            } else if (request.readyState === 4){
+                if (request.status == 200 && request.status < 300){
+                    statusMassage.innerHTML = message.success;
+                    //добавляем контент на страницу
+                } else {
+                    statusMassage.innerHTML = message.failure;
+                }
+            }
+        }
+        for ( let i = 0; i < input.length; i++){
+            input[i].value = '';
+            //Очищаем поля ввода
+        }
+    });
 
 });
-
-// window.addEventListener('DOMContentLoaded', function() {
-//     let tab = document.getElementsByClassName('info-header-tab'),
-//         tabContent = document.getElementsByClassName('info-tabcontent'),
-//         info = document.getElementsByClassName('info-header')[0];
-
-//     function hideTabsContent(a) {
-//         for (var i=a; i<tabContent.length; i++) {
-//             tabContent[i].classList.remove('show');
-//             tabContent[i].classList.add("hide");
-//             tab[i].classList.remove('whiteborder');
-//         }
-//     }
-
-//     hideTabsContent(1);
-
-//     function showTabContent(b) {
-//         if (tabContent[b].classList.contains('hide')){
-//             hideTabsContent(0);
-//             tabContent[b].classList.remove('hide');
-//             tabContent[b].classList.add('show');
-//         }
-//     }
-
-//     info.addEventListener('click', function(event) {
-//         let target = event.target;
-//         if (target.className == 'info-header-tab') {
-//             for ( let i = 0; i < tab.length; i++) {
-//                 if (target == tab[i]) {
-//                     hideTabsContent(i);
-//                     break;
-//                 }
-//             }
-//         };
-//     });
-
-
-// });
