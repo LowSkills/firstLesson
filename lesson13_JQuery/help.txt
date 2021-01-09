@@ -1,0 +1,15 @@
+Ангуляр (Angular): 
+    1. Node.js -> npm (Gulp)
+    2. TypeScript
+    3. Webpack
+    4. MVC
+    5. Angular
+
+Реакт (React):
+    1. Babel
+    2. JsX
+    3. Webpack
+    4. React()
+
+Вью Vue.js:
+    
