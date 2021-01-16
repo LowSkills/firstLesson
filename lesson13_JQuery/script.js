@@ -8,7 +8,7 @@ $(document).ready(function(){
     $('.list-item:eq(2)').on('click', function() {
         $('.image:even').fadeToggle('slow')
     });
-
+    //
     $('.list-item:eq(4)').on('click', function() {
         $('.image:odd').animate({
             opacity: 'toggle',
